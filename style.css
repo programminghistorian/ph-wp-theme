@@ -196,16 +196,15 @@
 
   html {
       background:rgba(0,0,0,0.05);
-      margin:0; padding:0;
+      margin:0; padding:2em 0 0;
   }
 
   body {
       background: rgba(255,255,255,0.95);
       border: 1px solid rgba(0,0,0,0.1);
-      font-family: 'Leto', Verdana, sans-serif;
+      font-family: 'Lato', Verdana, sans-serif;
       color: #494949;
-      padding: 20px;
-      font-size: 90%;
+      padding: 2em;
        
   }
 
@@ -217,6 +216,11 @@
   img {
     max-width: 100%;
   }
+
+  /* Contain floats: h5bp.com/q */
+  .clearfix:before, .clearfix:after { content: ""; display: table; }
+  .clearfix:after { clear: both; }
+  .clearfix { *zoom: 1; }
 
   header[role="banner"] {
     margin-bottom: 4em;
@@ -237,30 +241,29 @@
 @media only screen and (min-width: 480px) {
 
   body {
-    font-size:100%;
+    font-size:120%;
   }
   h1,h2,h3 {
-    text-align:left;
   }
 
-  header[role="banner"] {
-    text-align:right;
+  .unavailable header[role="banner"],
+  .unavailable div[role="main"] {
+    max-width: 480px;
+    margin-left:auto;
+    margin-right:auto;
   }
 
+  .unavailable div[role="main"] {
+    padding-right: 80px;
+  }
   header[role="banner"] h1 {
-    width: 450px;
+    text-align:left;
   }
 
 }
 
 @media only screen and (min-width: 768px) {
 
-  header[role="banner"],
-  div[role="main"] {
-    min-width: 768px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
 
 }
 

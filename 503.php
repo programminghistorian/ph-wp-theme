@@ -26,7 +26,7 @@
       ]);
     </script>
 </head>
-<body>
+<body class="unavailable">
   <header role="banner">
       <h1><a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_directory'); ?>/images/ph2logo.png" title="<?php bloginfo('name'); ?>" /></a></h1>
 
