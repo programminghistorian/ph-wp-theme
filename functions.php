@@ -3,13 +3,10 @@
 function ph_add_link_to_title($title) {
     global $post;
 
-    if (!is_single() && !is_page()) {
-        $title = '<a href="'
-               . get_permalink()
-               . '">'
-               . $title
-               . '</a>';
+    if (in_the_loop() && !is_singular()) {
+      $title = '<a href="'.get_permalink().'" rel="bookmark">'.$title.'</a>';
     }
+
     return $title;
 }
 
