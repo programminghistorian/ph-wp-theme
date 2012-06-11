@@ -237,7 +237,7 @@
   }
 }
 
-@media only screen and (min-width: 480px) {
+@media screen and (min-width: 480px) {
 
   body {
     font-size:120%;
@@ -258,10 +258,26 @@
 
 }
 
-@media only screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
 
+  h1,h2,h3 {
+    text-align:left;
+  }
 
+  header[role="banner"],
+  div[role="main"],
+  footer[role="contentinfo"] {
+    max-width: 768px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  header[role="banner"] h1 {
+    text-align:right;
+    margin-right: -120px;
+  }
 }
+
 
 @media print {
   * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
