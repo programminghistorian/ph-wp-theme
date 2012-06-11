@@ -32,7 +32,5 @@
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
   <header role="banner">
       <h1><a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_directory'); ?>/images/ph2logo.png" title="<?php bloginfo('site_title'); ?>" /></a></h1>
-
-      <?php wp_nav_menu( array( 'theme_location' => 'header'  ) ); ?>
   </header>
   <div role="main">
