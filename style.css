@@ -220,6 +220,18 @@
     max-width: 100%;
   }
 
+  /* first instance of a technical term */
+  .tech {font-style: italic;}
+
+  /* filenames, file paths, menu paths; variable names, function names, parameters; titles of publications */
+  .filename, .var, .pub {font-style: italic;}
+
+  /* words that are part of a programming language's code. eg, if, for, while, etc */
+  .reserved {font-family: monospace;}
+
+  /* a value the user has to input themselves. */
+  .userinput {font-family: monospace;}
+
   /* Contain floats: h5bp.com/q */
   .clearfix:before, .clearfix:after { content: ""; display: table; }
   .clearfix:after { clear: both; }
