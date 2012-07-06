@@ -31,6 +31,7 @@
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
   <header role="banner">
-      <h1><a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_directory'); ?>/images/ph2logo.png" title="<?php bloginfo('site_title'); ?>" /></a></h1>
+      <h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('site_title'); ?></a></h1>
+<?php wp_nav_menu( array( 'theme_location' => 'footer_additional', 'depth' => 1, 'container_class' => 'additional', 'menu_class' => 'additional'  ) ); ?>
   </header>
   <div role="main">

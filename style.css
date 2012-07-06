@@ -216,6 +216,7 @@
   h1,h2,h3 {
     font-family:'Crete Round', serif;
     text-align:center;
+    font-weight:normal;
   }
 
   h1 {
@@ -287,9 +288,10 @@
     margin-bottom: 4em;
   }
 
-  header[role="banner"] h1 a:hover img {
-   background:rgba(0,0,0,0.05);
- } 
+  header[role="banner"] h1 a {
+    color: #555;
+  }
+  
   article:not(:first-child):before {
       content: " — ··· —";
       display:block;
@@ -347,10 +349,20 @@
     padding-left:0;
     margin-left:0;
     text-align:center;
+    font-size: 0.9em;
   }
 
   .additional ul li {
     display:inline;
+  }
+
+  .additional li:not(:first-child):before {
+    content: " · ";
+    color: #999;
+  }
+
+  .additional a {
+    text-decoration:none;
   }
 
   .gist {
@@ -369,8 +381,6 @@
   body {
     font-size:120%;
   }
-  h1,h2,h3 {
-  }
 
   .unavailable header[role="banner"],
   .unavailable div[role="main"] {
@@ -379,19 +389,12 @@
     margin-right:auto;
   }
 
-  header[role="banner"] h1 {
-    text-align:left;
-  }
-
 }
 
 @media screen and (min-width: 700px) {
 
   body {
     position:relative;
-  }
-  h1,h2,h3 {
-    text-align:left;
   }
 
   header[role="banner"],
@@ -402,20 +405,6 @@
     margin-right:auto;
   }
 
-  header[role="banner"] h1 {
-    text-align:right;
-    margin-right: -120px;
-  }
-
-  .additional {
-    position:absolute;
-    top:0;
-    left:0;
-    width: 100%;
-  }
-  .additional ul {
-    text-align:left;
-  }    
 }
 
 
