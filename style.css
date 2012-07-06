@@ -232,6 +232,30 @@
     max-width: 100%;
   }
 
+  .navigation {
+    list-style:none;
+    padding-left:0;
+  }
+
+  .pager {
+    overflow:hidden;
+    zoom:1;
+  }
+
+  .pager li {
+    float:left;
+    width: 48%;
+  }
+
+  .pager li.next {
+    float:right;
+    text-align:right;
+  }
+
+  .pager a {
+    text-decoration:none;
+  }
+
   .kicker {
     font-size:0.8em;
     margin-bottom:0;

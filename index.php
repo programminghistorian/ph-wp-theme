@@ -30,7 +30,28 @@
             </footer>
             <?php endif; ?>
           </article>
-      <?php endwhile; else: ?>
+
+        <?php if (is_single()): ?>
+				<ul id="nav-below" class="navigation pager">
+          <li class="previous">
+          <p class="kicker">Previous</p>
+          <?php previous_post_link(); ?></li>
+          <li class="next">
+          <p class="kicker">Next</p>
+          <?php next_post_link(); ?></li>
+        </ul><!-- #nav-below -->
+        <?php endif; ?>
+
+      <?php endwhile; ?>
+<?php if (is_paged()): ?>
+<nav id="pagination">
+    <ul>
+        <li id="older"><?php next_posts_link(__('&laquo;Older Entries')); ?></li>
+        <li id="newer"><?php previous_posts_link(__('Newer Entries&raquo;')); ?></li>
+    </ul>
+</nav>
+<?php endif; ?>
+      <?php else: ?>
           <div id="not-found">
               <h1>Article Not Found</h1>
           </div>
