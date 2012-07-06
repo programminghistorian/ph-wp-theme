@@ -202,7 +202,7 @@
   body {
       border-top: 1px solid rgba(0,0,0,0.1);
       font-family: 'Lato', Verdana, sans-serif;
-      color: #494949;
+      color: #555;
       padding: 2em;
        
   }
@@ -264,6 +264,21 @@
       margin: 1em 0;
   }
 
+  article figure {
+    margin:2em 0;
+    text-align:center;
+    display:block;
+  }
+
+  article figure img {
+    margin-bottom: 0.5em;
+  }
+
+  article figcaption {
+    font-size:0.8em;
+    color: #777;
+  }
+
   .additional ul {
     list-style:none;
     padding-left:0;
@@ -276,7 +291,7 @@
   }
 
   .gist {
-    margin-bottom:2em;
+    margin:2em 0;
   }
 
   .gist .gist-meta {
