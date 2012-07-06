@@ -207,6 +207,12 @@
        
   }
 
+
+  a:link {color: #38c;}
+  a:visited {color: #39a;}
+  a:hover {color: #555;}
+  a:active {color: #555;}
+
   h1,h2,h3 {
     font-family:'Crete Round', serif;
     text-align:center;
@@ -214,6 +220,12 @@
 
   h1 {
     font-size: 2em;
+  }
+
+  h1 a,
+  h2 a,
+  h3 a {
+    text-decoration:none;
   }
 
   img {
