@@ -293,6 +293,8 @@
     border:1px dotted #ccc;
     border-width: 1px 0;
     padding: 1em 0;
+    overflow:hidden;
+    *zoom:1;
   }
 
   .author-picture {
