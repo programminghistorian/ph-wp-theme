@@ -304,6 +304,10 @@
       margin: 1em 0;
   }
 
+  article .kicker {
+    text-align:center;
+  }
+
   article figure {
     margin:2em 0;
     text-align:center;
@@ -322,6 +326,7 @@
   .author-info {
     border:1px dotted #ccc;
     border-width: 1px 0;
+    margin: 3em 0;
     padding: 1em 0;
     overflow:hidden;
     *zoom:1;
