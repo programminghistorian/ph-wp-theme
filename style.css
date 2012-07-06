@@ -232,6 +232,16 @@
     max-width: 100%;
   }
 
+  .kicker {
+    font-size:0.8em;
+    margin-bottom:0;
+    color: #999;
+  }
+
+  .kicker + * {
+    margin-top:0;
+  }
+
   /* first instance of a technical term */
   .tech {font-style: italic;}
 
@@ -277,6 +287,33 @@
   article figcaption {
     font-size:0.8em;
     color: #777;
+  }
+
+  .author-info {
+    border:1px dotted #ccc;
+    border-width: 1px 0;
+    padding: 1em 0;
+  }
+
+  .author-picture {
+    float:left;
+  }
+
+  .author-name,
+  .author-description,
+  .all-posts {
+    display:block;
+    margin: 0.25em 0 0.25em 140px;
+  }
+
+  .author-name {
+    font-weight: 600;
+    color: #999;
+  }
+
+  .author-description p,
+  .all-posts {
+    font-size:0.8em;
   }
 
   .additional ul {
