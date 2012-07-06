@@ -374,6 +374,21 @@
     padding: 10px 20px !important;
     color: #999 !important;
   }
+
+  .lessons-list ul {
+    list-style:none;
+    padding-left:0;
+  }
+
+  .lessons-list li {
+    margin-bottom:1em;
+  }
+
+  .lessons-list li a.permalink {
+    text-decoration:none;
+    font-weight:bold;
+  }
+
 }
 
 @media screen and (min-width: 480px) {

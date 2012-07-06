@@ -4,7 +4,7 @@ function ph_add_link_to_title($title) {
     global $post;
 
     if (in_the_loop() && !is_singular()) {
-      $title = '<a href="'.get_permalink().'" rel="bookmark">'.$title.'</a>';
+      $title = '<a href="'.get_permalink().'" class="permalink" rel="bookmark">'.$title.'</a>';
     }
 
     return $title;
@@ -34,7 +34,7 @@ function ph_lesson_content($content) {
     global $post;
 
     if ($post->post_title == 'Lessons') {
-        $content = ph_display_page_children($post);
+        $content = '<div class="lessons-list">'.ph_display_page_children($post).'</div>';
     }
 
     return $content;
@@ -65,7 +65,7 @@ function ph_display_page_children($post)
             $html = '<ul class="page-children ph-page-children">';
                 while (have_posts()) {
                 the_post();
-                $html .= '<li><a href="'.get_permalink(get_the_ID()).'" class="permalink">'.get_the_title().'</a> – '.get_the_excerpt().'</li>';
+                $html .= '<li>'.get_the_title().' · '.get_the_excerpt().'</li>';
             }
             $html .= '</ul>';
         }
