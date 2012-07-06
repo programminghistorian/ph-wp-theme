@@ -288,6 +288,10 @@
     margin-bottom: 4em;
   }
 
+  header[role="banner"] h1 {
+    font-size: 1.5em;
+  }
+
   header[role="banner"] h1 a {
     color: #555;
   }
