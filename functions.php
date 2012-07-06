@@ -75,3 +75,8 @@ function ph_display_page_children($post)
 
     return $html;
 }
+add_action( 'init', 'ph_add_page_excerpt' );
+
+function ph_add_page_excerpt() {
+  add_post_type_support( 'page', 'excerpt' );
+}
