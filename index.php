@@ -1,11 +1,22 @@
 <?php get_header(); ?>
       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+      <?php
+      $authors = get_post_meta( $post->ID , 'author(s)' , true );
+      $technical_reviewer = get_post_meta( $post->ID , 'technical_reviewer' , true );
+      $literary_reviewer = get_post_meta( $post->ID , 'literary_reviwer' , true );
+      ?>
           <article>
             <header>
                 <?php if (!is_page()): ?>
                 <p class="kicker"><?php echo the_time('F j, Y'); ?></p>
                 <?php endif; ?>
+
                 <h1><?php the_title(); ?></h1>
+                <?php if ($authors): ?>
+                <p class="byline">By <?php echo $authors; ?></p>
+                <?php endif; ?>
+
             </header>
             <div class="content">
 
@@ -16,6 +27,20 @@
                 the_excerpt();
               }
             ?>
+            
+            <?php if ($technical_reviewer || $literary_reviewer): ?>
+              <ul class="credits">
+              
+                <?php if ($technical_reviewer) : ?>
+                <li class="technical-reviewer">Technical Reviewer: <?php echo $technical_reviewer; ?></li>
+                <?php endif; ?>
+
+                <?php if ($literary_reviewer) : ?>
+                <li class="literary-reviewer">Literary Reviewer: <?php echo $literary_reviewer; ?>
+                <?php endif; ?>
+
+              </ul>
+            <?php endif; ?>
             </div>
             <?php if (is_single()): ?>
             <footer>
