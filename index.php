@@ -17,6 +17,19 @@
                 <p class="byline">By <?php echo $authors; ?></p>
                 <?php endif; ?>
 
+                <?php if ($technical_reviewer || $literary_reviewer): ?>
+                  <ul class="credits">
+
+                    <?php if ($technical_reviewer) : ?>
+                    <li class="technical-reviewer">Technical Reviewer: <?php echo $technical_reviewer; ?></li>
+                    <?php endif; ?>
+
+                    <?php if ($literary_reviewer) : ?>
+                    <li class="literary-reviewer">Literary Reviewer: <?php echo $literary_reviewer; ?>
+                    <?php endif; ?>
+
+                  </ul>
+                <?php endif; ?>
             </header>
             <div class="content">
 
@@ -26,21 +39,8 @@
               } else {
                 the_excerpt();
               }
-            ?>
-            
-            <?php if ($technical_reviewer || $literary_reviewer): ?>
-              <ul class="credits">
-              
-                <?php if ($technical_reviewer) : ?>
-                <li class="technical-reviewer">Technical Reviewer: <?php echo $technical_reviewer; ?></li>
-                <?php endif; ?>
+            ?> 
 
-                <?php if ($literary_reviewer) : ?>
-                <li class="literary-reviewer">Literary Reviewer: <?php echo $literary_reviewer; ?>
-                <?php endif; ?>
-
-              </ul>
-            <?php endif; ?>
             </div>
             <?php if (is_single()): ?>
             <footer>
