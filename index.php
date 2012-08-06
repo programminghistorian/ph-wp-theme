@@ -17,6 +17,10 @@
                 <p class="byline">By <?php echo $authors; ?></p>
                 <?php endif; ?>
 
+                <?php if (!is_page()): ?>
+                <p class="byline">By <?php echo get_the_author_meta('user_firstname') . ' ' . get_the_author_meta('user_lastname'); ?></p>
+                <?php endif; ?>
+
                 <?php if ($technical_reviewer || $literary_reviewer): ?>
                   <ul class="credits">
 
