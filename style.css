@@ -422,6 +422,14 @@
     font-weight:bold;
   }
 
+  footer[role="contentinfo"] {
+    text-align:center;
+  }
+
+  footer[role="contentinfo"] p {
+    font-size: 0.9em;
+    color: #999;
+  }
 }
 
 @media screen and (min-width: 480px) {
