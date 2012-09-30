@@ -5,6 +5,7 @@
       $authors = get_post_meta( $post->ID , 'author(s)' , true );
       $technical_reviewer = get_post_meta( $post->ID , 'technical_reviewer' , true );
       $literary_reviewer = get_post_meta( $post->ID , 'literary_reviwer' , true );
+      $markup_editor = get_post_meta($post->ID, 'markup_editor', true);
       ?>
           <article>
             <header>
@@ -21,7 +22,7 @@
                 <p class="byline">By <?php echo get_the_author_meta('user_firstname') . ' ' . get_the_author_meta('user_lastname'); ?></p>
                 <?php endif; ?>
 
-                <?php if ($technical_reviewer || $literary_reviewer): ?>
+                <?php if ($technical_reviewer || $literary_reviewer || $markup_editor): ?>
                   <ul class="credits">
 
                     <?php if ($technical_reviewer) : ?>
@@ -30,6 +31,10 @@
 
                     <?php if ($literary_reviewer) : ?>
                     <li class="literary-reviewer">Literary Reviewer: <?php echo $literary_reviewer; ?>
+                    <?php endif; ?>
+
+                    <?php if ($markup_editor) : ?>
+                    <li class="markup_editor">Markup Editor: <?php echo $markup_editor; ?>
                     <?php endif; ?>
 
                   </ul>
