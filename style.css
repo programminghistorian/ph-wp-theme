@@ -195,7 +195,7 @@
   td { vertical-align: top; }
 
   html {
-      border-top: 2em solid rgba(0,0,0,0.05);
+      border-top: 1em solid rgba(0,0,0,0.05);
       margin:0; padding:0;
   }
 
@@ -300,7 +300,9 @@
   .clearfix { *zoom: 1; }
 
   header[role="banner"] {
-    margin-bottom: 4em;
+    margin-bottom: 2em;
+    padding-bottom: 2em;
+    border-bottom: 1px solid #eee;
   }
 
   header[role="banner"] h1 {
@@ -424,6 +426,9 @@
 
   footer[role="contentinfo"] {
     text-align:center;
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px solid #eee;
   }
 
   footer[role="contentinfo"] p {
