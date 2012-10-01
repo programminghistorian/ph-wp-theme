@@ -48,7 +48,15 @@
               } else {
                 the_excerpt();
               }
-            ?> 
+            ?>
+
+            <?php if (is_lesson()) {
+
+              comments_template();
+
+            }
+            ?>
+
 
             </div>
             <?php if (is_single()): ?>

@@ -241,6 +241,11 @@
     max-width: 100%;
   }
 
+  form {
+    font-size:0.9em;
+    color: #555;
+  }
+
   .navigation {
     list-style:none;
     padding-left:0;
@@ -422,6 +427,50 @@
   .lessons-list li a.permalink {
     text-decoration:none;
     font-weight:bold;
+  }
+
+  .commentlist,
+  .commentlist ul {
+    list-style:none;
+  }
+
+  .commentlist {
+    font-size:0.9em;
+    padding-left:0;
+  }
+
+  .commentlist > li+li {
+    border-top:1px solid #eee;
+  }
+
+  .commentlist li {
+    background: #fafafa;
+    padding: 1em;
+  }
+
+  .commentlist li li {
+    background: rgba(255,255,255,0.5);
+  }
+
+  .commentlist img.avatar {
+    float:right;
+    margin-left: 1em;
+  }
+
+  .commentlist .says,
+  .commentmetadata {
+    display:none;
+  }
+
+  .commentlist cite {
+    font-style:normal;
+    font-weight:bold;
+  }
+
+  .commentlist .reply {
+    text-align:right;
+    font-size:0.9em;
+    margin-bottom:1em;
   }
 
   footer[role="contentinfo"] {

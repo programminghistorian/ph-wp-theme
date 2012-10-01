@@ -80,3 +80,17 @@ add_action( 'init', 'ph_add_page_excerpt' );
 function ph_add_page_excerpt() {
   add_post_type_support( 'page', 'excerpt' );
 }
+
+function is_lesson() {
+  global $post;
+
+  // Get the Lesson page by title. If we change the title of the Lessons page,
+  // we'll need to change this query.
+  $lessonPage = get_page_by_title('Lessons');
+
+  if (in_array($lessonPage->ID, get_post_ancestors($post->ID))) {
+    return true;
+  }
+
+  return false;
+}
