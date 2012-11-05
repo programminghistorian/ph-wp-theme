@@ -523,7 +523,6 @@
   footer[role="contentinfo"] {
     text-align:center;
     margin-top: 2em;
-    padding-top: 1em;
     border-top: 1px solid #eee;
   }
 
@@ -531,6 +530,37 @@
     font-size: 0.9em;
     color: #999;
   }
+
+  #logos {
+    overflow:hidden;
+    zoom:1;
+    padding-top: 2em;
+    margin-top: 1em;
+    border-top: 1px solid #eee;
+  }
+
+  #logos a {
+    display:block;
+    float:left;
+    width: 35%;
+  }
+
+  #logos a:link,
+  #logos a:visited {
+    opacity: 0.75;
+  }
+
+  #logos a:hover,
+  #logos a:focus,
+  #logos a:active {
+    opacity: 1;
+  }
+
+
+  #logos #rrchnm {
+    float:right;
+  }
+
 }
 
 @media screen and (min-width: 480px) {
