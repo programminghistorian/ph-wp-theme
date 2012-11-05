@@ -50,15 +50,36 @@
               }
             ?>
 
-            <?php if (is_lesson()) {
+            <?php if (is_lesson()): ?>
+              <footer>
+                  <?php if ($authors_bio = get_post_meta($post->ID, 'authors_bio', true)): ?>
+                        <div class="author-info">
+                          <p class="author-name">About <?php echo $authors; ?></p>
+                           <div class="author-description"><?php echo wpautop($authors_bio); ?></div>
+                        </div>
+                  <?php endif; ?>
 
-              comments_template();
+                  <?php if ($prev_post = get_previous_lesson($post->ID)): ?>
+                  <div class="previous previous-lesson pager">
+                    <p class="kicker">Previous Lesson</p>
+                    <a href="<?php echo get_page_link($prev_post); ?>"><?php echo get_the_title($prev_post); ?></a>
+                  </div>
+                  <?php endif; ?>
 
-            }
-            ?>
+                  <?php if ($next_post = get_post_meta($post->ID, 'link_to_next_lesson', true)): ?>
+                  <div class="next next-lesson pager">
+                    <p class="kicker">Next Lesson</p>
+                    <a href="<?php echo get_page_link($next_post); ?>"><?php echo get_the_title($next_post); ?></a>
+                  </div>
+                  <?php endif; ?>
+              </footer>
+            <?php comments_template(); ?>
 
+            <?php endif; ?>
 
             </div>
+
+
             <?php if (is_single()): ?>
             <footer>
               <div class="author-info">

@@ -374,7 +374,7 @@
   .author-description,
   .all-posts {
     display:block;
-    margin: 0.25em 0 0.25em 140px;
+    margin: 0.25em 140px;
   }
 
   .author-name {
@@ -430,6 +430,49 @@
   .lessons-list li a.permalink {
     text-decoration:none;
     font-weight:bold;
+  }
+
+  article footer {
+    overflow:hidden;
+    zoom:1;
+  }
+
+  article .pager {
+    border-bottom: 1px dotted #ccc;
+    padding-bottom:2em;
+    margin-bottom: 1em;
+  }
+
+  article .previous {
+    float:left;
+    width: 48%;
+    text-align:left;
+  }
+
+  article .previous .kicker {
+    text-align:left;
+    margin:0;
+  }
+
+  article .next {
+    float:right;
+    width: 48%;
+    text-align:right !important;
+  }
+
+  article .next .kicker {
+    text-align:right;
+    margin:0;
+  }
+
+  article .pager a {
+    text-decoration:none;
+    font-weight: bold;
+  }
+
+  #respond {
+    clear:both;
+    margin-top:4em;
   }
 
   .commentlist,

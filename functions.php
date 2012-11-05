@@ -94,3 +94,24 @@ function is_lesson() {
 
   return false;
 }
+
+function get_previous_lesson($id) {
+  $args = array(
+    'post_type' => 'page',
+    'meta_key' => 'link_to_next_lesson',
+    'meta_value' => $id
+  );
+
+    $previousLessons = new WP_Query($args);
+
+    while ($previousLessons->have_posts()) {
+      $previousLessons->next_post();
+      $array[] = $previousLessons->post->ID;
+    }
+
+    return $array[0];
+}
+
+function get_next_lesson($id) {
+    return get_post_meta($id, 'link_to_next_lesson', true);
+}
