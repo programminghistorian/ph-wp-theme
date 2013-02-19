@@ -115,3 +115,50 @@ function get_previous_lesson($id) {
 function get_next_lesson($id) {
     return get_post_meta($id, 'link_to_next_lesson', true);
 }
+
+add_action('init', 'ph_create_post_type');
+
+function ph_create_post_type() {
+
+    $labels = array(
+        'name' => 'Lessons',
+        'singular_name' => 'Lesson'
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'hierarchical' => true,
+        'capability_type' => 'page',
+        'rewrite' => array(
+            'with_front' => false,
+            'slug' => 'lessons'
+        ),
+        'supports' => array('title', 'editor', 'author', 'custom-fields', 'page-attributes', 'comments', 'excerpt')
+    );
+    register_post_type('lesson', $args);
+
+}
+
+
+add_action('init', 'ph_create_lesson_taxonomies', 0);
+
+function ph_create_lesson_taxonomies() {
+
+    $topicsArgs = array(
+        'hierarchical' => true,
+        'labels' => array(
+            'name' => 'Lesson Topics',
+            'singular_name' => 'Lesson Topic'
+        )
+    );
+
+    register_taxonomy('lesson_topics', array('lesson'), $topicsArgs);
+}
+
+function ph_rewrite_flush() {
+    flush_rewrite_rules();
+}
+
+add_action( 'after_switch_theme', 'ph_rewrite_flush' );
