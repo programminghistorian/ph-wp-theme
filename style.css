@@ -514,6 +514,16 @@
     font-weight: bold;
   }
 
+  .syntaxhighlighter {
+    border: 1px solid #ccc;
+    padding: 1em 0;
+  }
+
+  /* This is ridiculous. Thanks syntaxhighlighter. */
+  .syntaxhighlighter table tbody td {
+    font-size: 85% !important;
+  }
+
   #respond {
     clear:both;
     margin-top:4em;
