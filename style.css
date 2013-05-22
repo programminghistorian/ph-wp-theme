@@ -647,6 +647,33 @@
 
 }
 
+@media screen and (min-width: 1000px) and (min-height: 500px) {
+
+  .single-lesson .pager {
+    opacity: 0.5;
+  }
+
+  .single-lesson .pager:hover {
+    opacity: 1;
+  }
+
+  .single-lesson .previous,
+  .single-lesson .next {
+    display:block;
+    position:fixed !important;
+    width: 100px;
+    top: 275px;
+    font-size: 80%;
+  }
+
+  .single-lesson .previous {
+    margin-left: -160px;
+  }
+  .single-lesson .next {
+    margin-left: 760px;
+  }
+
+}
 
 @media print {
   * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
