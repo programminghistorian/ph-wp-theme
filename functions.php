@@ -130,7 +130,6 @@ function ph_create_post_type() {
         'public' => true,
         'has_archive' => true,
         'hierarchical' => true,
-        'capability_type' => 'page',
         'rewrite' => array(
             'with_front' => false,
             'slug' => 'lessons'
