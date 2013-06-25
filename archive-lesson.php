@@ -16,7 +16,9 @@ foreach ($categories as $category) {
       echo '<ul class="lessons">';
       while( have_posts() ) : the_post();
         echo '<li>';
+        echo '<a href="'.get_permalink().'">';
         the_title();
+        echo '</a>';
         $html = wp_list_pages('echo=0&post_type=lesson&title_li=&child_of='.get_the_ID());
         if ($html) {
           echo '<ul>';

@@ -1,17 +1,5 @@
 <?php
 
-function ph_add_link_to_title($title) {
-    global $post;
-
-    if (in_the_loop() && !is_singular()) {
-      $title = '<a href="'.get_permalink().'" class="permalink" rel="bookmark">'.$title.'</a>';
-    }
-
-    return $title;
-}
-
-add_filter('the_title', 'ph_add_link_to_title');
-
 register_nav_menu( 'footer_additional', __( 'Main Menu' ) );
 
 function ph_list_lessons() {
@@ -161,3 +149,36 @@ function ph_rewrite_flush() {
 }
 
 add_action( 'after_switch_theme', 'ph_rewrite_flush' );
+
+function ph_lesson_pager() {
+  global $post;
+$posts = get_pages("post_type=lesson&orderby=menu_order");
+$pages = get_page_hierarchy($posts);
+
+$pages = array_keys($pages);
+$current = array_search($post->ID, $pages);
+$prevId = $pages[$current - 1];
+$nextId = $pages[$current + 1];
+
+
+//echo "Current: $current";
+//echo "Prev: $prevID";
+//echo "Next: $nextID";
+
+?>
+
+<ul class="navigation pager">
+<?php if (!empty($prevId)) { ?>
+<li class="previous">
+<p class="kicker">Previous</p>
+<a href="<?php echo get_permalink($prevId); ?>"><?php echo get_the_title($prevId); ?></a>
+</li>
+<?php }
+if (!empty($nextId)) { ?>
+  <li class="next">
+<p class="kicker">Next</p>
+<a href="<?php echo get_permalink($nextId); ?>"><?php echo get_the_title($nextId); ?></a></li>
+<?php } ?>
+</ul><!-- .navigation -->
+<?php
+}

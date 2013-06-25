@@ -13,7 +13,7 @@
                 <p class="kicker"><?php echo the_time('F j, Y'); ?></p>
                 <?php endif; ?>
 
-                <h1><?php the_title(); ?></h1>
+                <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
                 <?php if ($authors): ?>
                 <p class="byline">By <?php echo $authors; ?></p>
                 <?php endif; ?>
@@ -93,8 +93,9 @@
             </footer>
             <?php endif; ?>
           </article>
-
-        <?php if (is_single()): ?>
+        <?php if (get_post_type() == 'lesson'): ?>
+        <?php ph_lesson_pager(); ?>
+        <?php elseif (is_single()): ?>
 				<ul id="nav-below" class="navigation pager">
           <li class="previous">
           <p class="kicker">Previous</p>
