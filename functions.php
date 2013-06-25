@@ -152,7 +152,7 @@ add_action( 'after_switch_theme', 'ph_rewrite_flush' );
 
 function ph_lesson_pager() {
   global $post;
-$posts = get_pages("post_type=lesson&post_status=published&sort_column=menu_order");
+$posts = get_pages("post_type=lesson&sort_column=menu_order");
 $pages = get_page_hierarchy($posts);
 $pages = array_keys($pages);
 
