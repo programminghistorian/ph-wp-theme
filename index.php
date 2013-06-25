@@ -16,9 +16,7 @@
                 <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
                 <?php if ($authors): ?>
                 <p class="byline">By <?php echo $authors; ?></p>
-                <?php endif; ?>
-
-                <?php if (!is_page()): ?>
+                <?php elseif (is_single()): ?>
                 <p class="byline">By <?php echo get_the_author_meta('user_firstname') . ' ' . get_the_author_meta('user_lastname'); ?></p>
                 <?php endif; ?>
 
