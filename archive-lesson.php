@@ -1,16 +1,16 @@
 <?php get_header(); ?>
 <h1>Lessons</h1>
 <?php
-global $wp_query;
 
 $categories = get_categories(array('taxonomy' => 'lesson_topics'));
 
 // This is ugly terrible.
 
 foreach ($categories as $category) {
-    echo '<section class="'.$category->slug.' category">';
+    $categorySlug = $category->category_nicename;
+    echo '<section class="'.$categorySlug.' category">';
     echo "<h2>".$category->name."</h2>";
-    $args = array_merge( $wp_query->query_vars, array('post_parent' => 0, 'lesson_topics' => $category->slug));
+    $args = array('lesson_topics' => $categorySlug, 'post_parent' => 0);
     query_posts( $args );
     if ( have_posts() ):
       echo '<ul class="lessons">';
@@ -37,4 +37,5 @@ wp_reset_query();
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
+
 
