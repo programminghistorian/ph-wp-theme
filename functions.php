@@ -152,18 +152,13 @@ add_action( 'after_switch_theme', 'ph_rewrite_flush' );
 
 function ph_lesson_pager() {
   global $post;
-$posts = get_pages("post_type=lesson&orderby=menu_order");
+$posts = get_pages("post_type=lesson&post_status=published&sort_column=menu_order");
 $pages = get_page_hierarchy($posts);
-
 $pages = array_keys($pages);
+
 $current = array_search($post->ID, $pages);
 $prevId = $pages[$current - 1];
 $nextId = $pages[$current + 1];
-
-
-//echo "Current: $current";
-//echo "Prev: $prevID";
-//echo "Next: $nextID";
 
 ?>
 
