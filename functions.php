@@ -98,7 +98,6 @@ function display_lesson_link($type = 'next') {
         $html = '<a class="'.$type.'" href="'.get_permalink($lesson->ID).'">'.$lesson->post_title.'</a>';
     }
 
-    return 'foobar';
     return $html;
 }
 
