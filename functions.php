@@ -83,25 +83,23 @@ function is_lesson() {
   return false;
 }
 
-function get_previous_lesson($id) {
-  $args = array(
-    'post_type' => 'page',
-    'meta_key' => 'link_to_next_lesson',
-    'meta_value' => $id
-  );
+function display_lesson_link($type = 'next') {
+    global $post;
 
-    $previousLessons = new WP_Query($args);
+    $html = '';
 
-    while ($previousLessons->have_posts()) {
-      $previousLessons->next_post();
-      $array[] = $previousLessons->post->ID;
+    $metaKey = 'next_lesson';
+
+    if ($type = 'previous') {
+        $metaKey = 'previous_lesson';
     }
 
-    return $array[0];
-}
+    if ($lesson = get_post(get_post_meta($id, $metaKey, true))) {
+        $html = '<a class="'.$type.'" href="'.get_permalink($lesson->ID).'">'.$lesson->post_title.'</a>';
+    }
 
-function get_next_lesson($id) {
-    return get_post_meta($id, 'link_to_next_lesson', true);
+    return 'foobar';
+    return $html;
 }
 
 add_action('init', 'ph_create_post_type');
@@ -152,28 +150,21 @@ add_action( 'after_switch_theme', 'ph_rewrite_flush' );
 
 function ph_lesson_pager() {
   global $post;
-$posts = get_pages("post_type=lesson&sort_column=menu_order");
-$pages = get_page_hierarchy($posts);
-$pages = array_keys($pages);
-
-$current = array_search($post->ID, $pages);
-$prevId = $pages[$current - 1];
-$nextId = $pages[$current + 1];
-
 ?>
 
 <ul class="navigation pager">
-<?php if (!empty($prevId)) { ?>
+<?php if ($prev = display_lesson_link('previous')) { ?>
 <li class="previous">
 <p class="kicker">Previous</p>
-<a href="<?php echo get_permalink($prevId); ?>"><?php echo get_the_title($prevId); ?></a>
+<?php echo $prev; ?>
 </li>
 <?php }
-if (!empty($nextId)) { ?>
+if ($next = display_lesson_link('next')) { ?>
   <li class="next">
 <p class="kicker">Next</p>
-<a href="<?php echo get_permalink($nextId); ?>"><?php echo get_the_title($nextId); ?></a></li>
+<?php echo $next; ?>
 <?php } ?>
 </ul><!-- .navigation -->
 <?php
 }
+
