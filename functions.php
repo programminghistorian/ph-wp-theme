@@ -90,12 +90,12 @@ function display_lesson_link($type = 'next') {
 
     $metaKey = 'next_lesson';
 
-    if ($type = 'previous') {
+    if ($type == 'previous') {
         $metaKey = 'previous_lesson';
     }
 
-    if ($lesson = get_post(get_post_meta($id, $metaKey, true))) {
-        $html = '<a class="'.$type.'" href="'.get_permalink($lesson->ID).'">'.$lesson->post_title.'</a>';
+    if ($lesson = get_post(get_post_meta($post->ID, $metaKey, true))) {
+        $html = '<a href="'.get_permalink($lesson->ID).'">'.$lesson->post_title.'</a>';
     }
 
     return $html;
@@ -148,7 +148,6 @@ function ph_rewrite_flush() {
 add_action( 'after_switch_theme', 'ph_rewrite_flush' );
 
 function ph_lesson_pager() {
-  global $post;
 ?>
 
 <ul class="navigation pager">
