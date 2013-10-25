@@ -95,7 +95,7 @@ function display_lesson_link($type = 'next') {
     }
 
     if ($lessonKey = get_post_meta($post->ID, $metaKey, true)) {
-        if ($lesson = get_post($lessonKey)) {
+        if (is_int($lessonKey) && $lesson = get_post($lessonKey)) {
             $html = '<a href="'.get_permalink($lesson->ID).'">'.$lesson->post_title.'</a>';
         }
     }
