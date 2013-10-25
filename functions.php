@@ -94,8 +94,10 @@ function display_lesson_link($type = 'next') {
         $metaKey = 'previous_lesson';
     }
 
-    if ($lesson = get_post(get_post_meta($post->ID, $metaKey, true))) {
-        $html = '<a href="'.get_permalink($lesson->ID).'">'.$lesson->post_title.'</a>';
+    if ($lessonKey = get_post_meta($post->ID, $metaKey, true)) {
+        if ($lesson = get_post($lessonKey)) {
+            $html = '<a href="'.get_permalink($lesson->ID).'">'.$lesson->post_title.'</a>';
+        }
     }
 
     return $html;
